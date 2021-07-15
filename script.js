@@ -18,6 +18,8 @@ function htmlButtonEvent(){
 function changeButtonEventText(){
 	change = document.getElementById('select')
 	change.addEventListener("click", function(){
+		var h3 = document.getElementById('h3');
+		h3.innerText = ''
 		currentLeftColour = document.getElementById('leftColour').value;
 		currentRightColour = document.getElementById('rightColour').value;
 		document.body.style.background = "linear-gradient(to right, "+currentLeftColour+" , "+currentRightColour+")";
@@ -32,6 +34,8 @@ function changeButtonEventText(){
 function changeButtonEventWheel(){
 	change = document.getElementById('select')
 	change.addEventListener("click", function(){
+		var h3 = document.getElementById('h3');
+		h3.innerText = ''
 		currentLeftColour = document.getElementById('leftColour').value;
 		currentRightColour = document.getElementById('rightColour').value;
 		document.body.style.background = "linear-gradient(to right, "+currentLeftColour+" , "+currentRightColour+")";
