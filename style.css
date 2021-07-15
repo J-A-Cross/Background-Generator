@@ -1,0 +1,19 @@
+* {
+	text-align: center;
+}
+
+h1 {
+	color: white
+}
+
+body {
+	background-image: linear-gradient(to right, #0723f2 ,  #d40de3);
+}
+
+p {
+	font-size: 10px
+}
+
+.size80 {
+	min-width: 65px
+}
