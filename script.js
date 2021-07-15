@@ -49,11 +49,11 @@ function changeButtonEventText(){
 		isValidInput = (checkValidHex(document.getElementById('leftColour').value, document.getElementById('rightColour').value));
 		if (isValidInput){
 			document.body.style.background = "linear-gradient(to right, "+currentLeftColour+" , "+currentRightColour+")";
-		return currentLeftColour, currentRightColour			
 		document.getElementById('leftColour').value = '';
 		document.getElementById('rightColour').value = '';	
 		document.getElementById('leftColour').placeholder = '#000000';
 		document.getElementById('rightColour').placeholder = '#FFFFFF';
+		return currentLeftColour, currentRightColour			
 		}
 
 	})
