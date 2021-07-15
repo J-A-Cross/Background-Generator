@@ -15,19 +15,47 @@ function htmlButtonEvent(){
 	})
 }
 
+function checkValidHex(leftColour, rightColour){
+	console.log(leftColour, rightColour)
+	lValid = false
+	rValid = false
+	if (leftColour.startsWith('#')){
+		 if (leftColour.length === 7){
+		 	currentLeftColour = leftColour
+		 	lValid = true
+		 } 
+	}
+	if (leftColour.length == 6){
+	 	lValid = true
+	 	currentLeftColour = "#"+leftColour
+	}
+	if (rightColour.startsWith('#')){
+		if (rightColour.length === 7){
+			currentRightColour = rightColour
+		 	rValid = true
+	}}
+	if (rightColour.length === 6){
+		currentRightColour = "#"+rightColour
+		 rValid = true
+	}
+	return (lValid && rValid);
+}
+
 function changeButtonEventText(){
 	change = document.getElementById('select')
 	change.addEventListener("click", function(){
 		var h3 = document.getElementById('h3');
 		h3.innerText = ''
-		currentLeftColour = document.getElementById('leftColour').value;
-		currentRightColour = document.getElementById('rightColour').value;
-		document.body.style.background = "linear-gradient(to right, "+currentLeftColour+" , "+currentRightColour+")";
+		isValidInput = (checkValidHex(document.getElementById('leftColour').value, document.getElementById('rightColour').value));
+		if (isValidInput){
+			document.body.style.background = "linear-gradient(to right, "+currentLeftColour+" , "+currentRightColour+")";
+		return currentLeftColour, currentRightColour			
 		document.getElementById('leftColour').value = '';
 		document.getElementById('rightColour').value = '';	
 		document.getElementById('leftColour').placeholder = '#000000';
 		document.getElementById('rightColour').placeholder = '#FFFFFF';
-		return currentLeftColour, currentRightColour
+		}
+
 	})
 }
 
